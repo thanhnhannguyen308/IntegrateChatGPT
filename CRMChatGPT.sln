@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM.ChatGpt", "CRM.ChatGpt\CRM.ChatGpt.csproj", "{63B4E674-4EFE-49FD-973F-268C97538DB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM.Model", "CRM.Model\CRM.Model.csproj", "{95D1615A-70AA-4B92-AEF6-DCF886B1344F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM.Service", "CRM.Service\CRM.Service.csproj", "{764129D8-FF15-409E-B804-3EA672E64C37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63B4E674-4EFE-49FD-973F-268C97538DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B4E674-4EFE-49FD-973F-268C97538DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B4E674-4EFE-49FD-973F-268C97538DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B4E674-4EFE-49FD-973F-268C97538DB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95D1615A-70AA-4B92-AEF6-DCF886B1344F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D1615A-70AA-4B92-AEF6-DCF886B1344F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D1615A-70AA-4B92-AEF6-DCF886B1344F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D1615A-70AA-4B92-AEF6-DCF886B1344F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{764129D8-FF15-409E-B804-3EA672E64C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{764129D8-FF15-409E-B804-3EA672E64C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{764129D8-FF15-409E-B804-3EA672E64C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{764129D8-FF15-409E-B804-3EA672E64C37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9B48B6E-EE7F-4019-8308-F62D1C7EC39A}
+	EndGlobalSection
+EndGlobal
