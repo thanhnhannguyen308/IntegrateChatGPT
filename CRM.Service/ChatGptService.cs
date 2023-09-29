@@ -1,12 +1,8 @@
 ﻿using CRM.Model;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CRM.Service
 {
@@ -31,20 +27,27 @@ namespace CRM.Service
         {
             try
             {
-                string endpoint = _configuration["ChatGpt:endpoint-text-davinci-003"] ?? "";
+                string endpoint = _configuration["ChatGpt:endpoint-gpt-3.5-turbo"] ?? "";
                 string instructions = _configuration["ChatGpt:instructions1"] ?? "";
-                var prompt = instructions + "\n\n" + contentBody;
+                //var prompt = instructions + "\n\n" + contentBody;
 
                 var request = new ContentChatGptRequest
                 {
-                    prompt = prompt,
-                    temperature = 1,
-                    max_tokens = 150
+                    Model = _configuration["ChatGpt:model"] ?? "",
+                    Temperature = 0.7,
+                    Messages = new List<Messages>
+                    {
+                        new Messages
+                        {
+                            Role = "user",
+                            Content = contentBody
+                        }
+                    }
                 };
 
-                var json = System.Text.Json.JsonSerializer.Serialize(request);
+                var json = JsonConvert.SerializeObject(request);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-
+                //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _configuration["ChatGpt:apiKey"] ?? "");
                 var response = await _httpClient.PostAsync(endpoint, content);
 
                 if (response.IsSuccessStatusCode)
@@ -52,7 +55,7 @@ namespace CRM.Service
                     var result = await response.Content.ReadAsStringAsync();
                     JObject responseObject = JObject.Parse(result);
 
-                    string generatedText = responseObject["choices"][0]["text"].ToString();
+                    string generatedText = responseObject["choices"][0]["message"]["content"].ToString();
                     return generatedText;
                 }
                 else
